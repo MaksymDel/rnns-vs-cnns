@@ -1,9 +1,9 @@
 # Spooky Author Identification using Neural Networks
-My experiments with Kaggle's Spooky Author Identification dataset.
+
 
 Competition goal is to predict the author of excerpts from horror stories by Edgar Allan Poe, Mary Shelley, and HP Lovecraft
 
-However, the goal of my experiments was not to get the best score possible, but to experience it myself how does neural networks perform. 
+However, the goal of my experiments was not to get the best score possible, but to experience it myself how do several neural networks variants react to the sentence representation options. 
 
 
 Competition link: [link](https://www.kaggle.com/c/spooky-author-identification) <br>
