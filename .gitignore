@@ -1,0 +1,6 @@
+.vscode
+allennlp
+*.pyc
+.cache/
+experiments_models
+data
