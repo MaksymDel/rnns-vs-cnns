@@ -11,6 +11,10 @@ All the models are implemented using [allennlp](https://github.com/allenai/allen
 
 To reproduce experiments, fetch allennlp's commit specified at requirements.txt.   
 
+## Reproduce
+1) [Competiton rules](https://www.kaggle.com/c/spooky-author-identification/rules) allow for use of the data for academic goals, so I attached prepared data to this repo (/data folder). 
+2) The data is first split into dev (3000 points) and train sets (code is in the /data_utils folder), and then truecased and tokenized using [moses scripts](https://github.com/marian-nmt/moses-scripts)    
+
 ## Method
 General idea is the same:
 1) Encode source sentence to get single vector sentence representation
@@ -33,3 +37,5 @@ Sentence encoding variations I experimented with: <br>
 
 - RNN over word embeddings + linguistic tegs + CNN based word characters embeddings
 
+## Future work
+It is interesting also to see how rubust are results across different datasets. 
