@@ -26,7 +26,7 @@ def json_lines2csv(path_in_file, path_out_file):
         idxs = f.readlines()
 
     fw = csv.writer(open(path_out_file, "w"))
-    fw.writerow(["id", "EAP", "HPL", "MWS"])
+    fw.writerow(["id", "HPL", "EAP", "MWS"])
     
     for i in range(len(idxs)):
         x = json.loads(jsonlines[i])
