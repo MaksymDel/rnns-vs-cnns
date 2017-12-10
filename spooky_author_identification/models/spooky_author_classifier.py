@@ -49,7 +49,7 @@ class SpookyAuthorClassifier(Model):
         
         self.metrics = {
                 "accuracy": CategoricalAccuracy(),
-                "accuracy3": CategoricalAccuracy(top_k=2)
+                "accuracy2": CategoricalAccuracy(top_k=2)
         }
         self.loss = torch.nn.CrossEntropyLoss()
         initializer(self)
