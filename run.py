@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import logging
 import os
 import sys
@@ -9,13 +9,13 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s - %(message)s
 
 # NOTE: This line is important!  It's what makes all of the classes in `my_library` findable by
 # AllenNLP's registry.
-from spooky-author-identification import *
+from spooky_author_identification import *
 
 from allennlp.commands import main  # pylint: disable=wrong-import-position
 
 predictors = {
-    'ngrams2seq': 'ngrams2seq'
+    'author_classifier': 'author_classifier'
 }
 
 if __name__ == "__main__":
-    main(prog="python run.py", predictor_overrides=predictors)
+    main(prog="python3 run.py", predictor_overrides=predictors)

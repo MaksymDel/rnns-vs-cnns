@@ -21,3 +21,4 @@ data/tok-train_X.txt
 data/train.zip
 data/train_X.txt
 data/train_y.txt
+data/glove/glove.6B.100d.txt.gz
