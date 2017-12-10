@@ -30,7 +30,7 @@ def json_lines2csv(path_in_file, path_out_file):
     
     for i in range(len(idxs)):
         x = json.loads(jsonlines[i])
-        if i != len(idxs-1):
+        if i != len(idxs) - 1:
             id = idxs[i][:-1]
         else:
             id = idxs[i]
