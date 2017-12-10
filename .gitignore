@@ -22,3 +22,5 @@ data/train.zip
 data/train_X.txt
 data/train_y.txt
 data/glove/glove.6B.100d.txt.gz
+data/tc-tok-test_public_X*
+data/submission*

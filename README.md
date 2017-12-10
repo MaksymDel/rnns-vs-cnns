@@ -19,15 +19,15 @@ so I attached prepared data to this repo (/data folder): `preprocessed-train.txt
 2) Train a model: 
 `python -m run train experiments_configs/authors_classifier.json -s experiments_models/initial_run`
 (you can choose another .json config to train another model, or choose another save folder)
-3) Convert test set to the json lines format: 
-`python3 data_utils/predict_utils.py tc-tok-test_public_X.txt tc-tok-test_public_X.jsonl`
-4) [Optional] Compute metrics values for your model on dev set: 
-`python -m run evaluate --archive_file experiments_models/initial_run/model.tar.gz --evaluation_data_file tests/fixtures/spooky_lines.txt --cuda_device -1`
+3) [Optional] Compute metrics values for your model on dev set: 
+`python -m run evaluate --archive_file experiments_models/initial_run/model.tar.gz --evaluation_data_file data/preprocessed-dev.txt --cuda_device -1`
+4) Convert test set to the json lines format: 
+`python3 data_utils/predict_utils.py data/tc-tok-test_public_X.txt data/tc-tok-test_public_X.jsonl`
 5) Translate the test set:
-`python -m run predict experiments_models/initial_run/model.tar.gz inputs.jsonl --output-file outputs.jsonl`
+`python -m run predict experiments_models/initial_run/model.tar.gz data/tc-tok-test_public_X.jsonl --output-file data/submission-test-public_Y.jsonl`
 6) Convert test set to the txt format:
-`python3 data_utils/predict_utils.py outputs.jsonl outputs.txt`
-7) Covert txt test set to the Kaggle's submission format:
+`python3 data_utils/predict_utils.py data/submission-test-public_Y.jsonl data/submission-test-public_Y.txt`
+7) Convert txt test set to the Kaggle's submission format:
 `TBD`
 
 ## Data preprocessing
