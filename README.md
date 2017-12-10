@@ -17,16 +17,16 @@ so I attached prepared data to this repo (/data folder): `preprocessed-train.txt
 1) Download glove embeddings and put to to the data/glove folder: <br>
 `https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.6B.100d.txt.gz`
 2) Train a model: <br>
-`python -m run train experiments_configs/authors_classifier.json -s experiments_models/initial_run`<br>
+`python -m run train experiments_configs/authors_classifier.json -s experiments_models/pilot`<br>
 (you can choose another .json config to train another model, or choose another save folder)
 3) [Optional] Compute metrics values for your model on dev set: <br>
-`python -m run evaluate --archive_file experiments_models/initial_run/model.tar.gz --evaluation_data_file data/preprocessed-dev.txt --cuda_device -1`
+`python -m run evaluate --archive_file experiments_models/pilot/model.tar.gz --evaluation_data_file data/preprocessed-dev.txt --cuda_device -1`
 4) Convert test set to the json lines format: <br>
 `python3 data_utils/predict_utils.py data/tc-tok-test_public_X.txt data/tc-tok-test_public_X.jsonl`
 5) Translate the test set: <br>
-`python -m run predict experiments_models/initial_run/model.tar.gz data/tc-tok-test_public_X.jsonl --output-file data/submission-test-public_Y.jsonl`
+`python -m run predict experiments_models/pilot/model.tar.gz data/tc-tok-test_public_X.jsonl --output-file data/submission-pilot.jsonl`
 6) Convert test set to the Kaggle submision format: <br>
-`python3 data_utils/predict_utils.py data/submission-test-public_Y.jsonl data/submission-test-public_Y.csv`
+`python3 data_utils/predict_utils.py data/submission-pilot.jsonl data/submission-pilot.csv`
 
 ## Data preprocessing
 The data is first split into dev (3000 points) and train sets (code is in the /data_utils folder), and then truecased and tokenized using [moses scripts](https://github.com/marian-nmt/moses-scripts)    
