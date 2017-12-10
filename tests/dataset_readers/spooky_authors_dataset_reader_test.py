@@ -20,7 +20,7 @@ class TestSpookyAuthorsDatasetReader(AllenNlpTestCase):
         instance3 = {"sentence": ["no", 'father', 'could', 'claim', 'the', 'gratitude', 'of', 'his',
                      'child', 'so', 'completely', 'as', 'I', "should", "deserve", 'theirs', '.'],
                      "author": "MWS"}
-
+    
         assert len(dataset.instances) == 6
         fields = dataset.instances[0].fields
         assert [t.text for t in fields["sentence"].tokens] == instance1["sentence"]
