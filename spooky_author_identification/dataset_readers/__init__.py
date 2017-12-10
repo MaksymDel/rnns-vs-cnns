@@ -1,0 +1,1 @@
+from spooky_author_identification.dataset_readers.spooky_authors import SpookyAuthorsDatasetReader

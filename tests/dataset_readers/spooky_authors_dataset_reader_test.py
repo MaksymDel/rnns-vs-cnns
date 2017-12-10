@@ -1,16 +1,12 @@
 from allennlp.common.testing import AllenNlpTestCase
-from spooky-author-identification.dataset_readers import SpookyAuthorsDatasetReader
+from spooky_author_identification.dataset_readers import SpookyAuthorsDatasetReader
 
 class TestSpookyAuthorsDatasetReader(AllenNlpTestCase):
     def test_read_from_file(self):
         reader = SpookyAuthorsDatasetReader()
         dataset = reader.read('tests/fixtures/spooky_lines.txt')
 
-        cold is merely nothing .@EAP
-        but it is not to this fact that I now especially advert .@EAP
-        no father could claim the gratitude of his child so completely as I should deserve theirs .@MWS
-
-        instance1 = {"sentence": ["the", "cold", "is", "merely", "nothing"],
+        instance1 = {"sentence": ["the", "cold", "is", "Merely", "nothing", "."],
                      "author": "EAP"}
 
         instance2 = {"sentence": ["but", "it", "is", "not", "to", 'this', 'fact', 'that', 'I', 'now',
