@@ -56,7 +56,10 @@ class SpookyAuthorsDatasetReader(DatasetReader):
                     continue
                 line_split = line.split('@')
                 sentence = line_split[0]
-                author = line_split[1]
+                if len(line_split) > 1:
+                    author = line_split[1]
+                else:
+                    author = 'HPL' # stub for Kaggle test set without labels
                 instances.append(self.text_to_instance(sentence, author))
         if not instances:
             raise ConfigurationError("No instances read!")
