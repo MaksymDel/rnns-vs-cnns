@@ -7,6 +7,7 @@ experiments_models
 moses-scripts
 
 # no temporary data files
+tests/fixtures/pilot
 data/dev_X.txt
 data/dev_y.txt
 data/tc-tok-dev.txt
