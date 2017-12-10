@@ -5,4 +5,19 @@ allennlp
 .ipynb_checkpoints
 experiments_models
 moses-scripts
-data
+
+# no temporary data files
+data/dev_X.txt
+data/dev_y.txt
+data/tc-tok-dev.txt
+data/tc-tok-dev_X.txt
+data/tc-tok-train_X.txt
+data/test.zip
+data/test_public_idx.txt
+data/test_public_X.txt
+data/tok-dev_X.txt
+data/tok-test_public_X.txt
+data/tok-train_X.txt
+data/train.zip
+data/train_X.txt
+data/train_y.txt
