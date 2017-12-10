@@ -13,7 +13,6 @@ data/tc-tok-dev.txt
 data/tc-tok-dev_X.txt
 data/tc-tok-train_X.txt
 data/test.zip
-data/test_public_idx.txt
 data/test_public_X.txt
 data/tok-dev_X.txt
 data/tok-test_public_X.txt

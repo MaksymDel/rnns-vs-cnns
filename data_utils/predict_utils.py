@@ -1,8 +1,10 @@
+import csv
+import json
 """ Quick hacks here. Usage:
 1) If we want to convert .txt to .jsonl:
 python3 data_utils/predict_utils.py path_in.txt path_out.jsonl
-2) If we want to convert .jsonl output to txt:
-python3 data_utils/predict_utils.py path_in.jsonl path_out.txt 
+2) If we want to convert .jsonl output to csv:
+python3 data_utils/predict_utils.py path_in.jsonl path_out.csv 
 """
 def txt2json_lines(path_in_file, path_out_file):
     with open(path_in_file, 'r') as f:
@@ -16,17 +18,20 @@ def txt2json_lines(path_in_file, path_out_file):
     with open(path_out_file, 'w', ) as f:
         f.write("\n".join(jsonlines))
 
-def json_lines2txt(path_in_file, path_out_file):
+def json_lines2csv(path_in_file, path_out_file):
     with open(path_in_file, 'r') as f:
         jsonlines = f.readlines()
-    
-    txtlines = []
-    for l in jsonlines:
-        tl = l[-6:-3]
-        txtlines.append(tl)
+        
+    with open('data/test_public_idx.txt', 'r') as f:
+        idxs = f.readlines()
 
-    with open(path_out_file, 'w', ) as f:
-        f.write("\n".join(txtlines))
+    fw = csv.writer(open(path_out_file, "w"))
+    fw.writerow(["id", "EAP", "HPL", "MWS"])
+    
+    for i in range(len(idxs)):
+        x = json.loads(jsonlines[i])
+        id = idxs[i][:-1]
+        fw.writerow([id, *tuple(x['class_probabilities'])])
 
 import sys
 
@@ -35,9 +40,9 @@ if args[2][-6:] == '.jsonl':
     print('Generating %s from %s...' % (args[2], args[1]))
     txt2json_lines(args[1], args[2])
     print('Finished')
-elif args[2][-4:] == '.txt':
+elif args[2][-4:] == '.csv':
     print('Generating %s from %s...' % (args[2], args[1]))
-    json_lines2txt(args[1], args[2])
+    json_lines2csv(args[1], args[2])
     print('Finished')
     
 else:

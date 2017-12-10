@@ -25,10 +25,8 @@ so I attached prepared data to this repo (/data folder): `preprocessed-train.txt
 `python3 data_utils/predict_utils.py data/tc-tok-test_public_X.txt data/tc-tok-test_public_X.jsonl`
 5) Translate the test set:
 `python -m run predict experiments_models/initial_run/model.tar.gz data/tc-tok-test_public_X.jsonl --output-file data/submission-test-public_Y.jsonl`
-6) Convert test set to the txt format:
-`python3 data_utils/predict_utils.py data/submission-test-public_Y.jsonl data/submission-test-public_Y.txt`
-7) Convert txt test set to the Kaggle's submission format:
-`TBD`
+6) Convert test set to the Kaggle submision format:
+`python3 data_utils/predict_utils.py data/submission-test-public_Y.jsonl data/submission-test-public_Y.csv`
 
 ## Data preprocessing
 The data is first split into dev (3000 points) and train sets (code is in the /data_utils folder), and then truecased and tokenized using [moses scripts](https://github.com/marian-nmt/moses-scripts)    
