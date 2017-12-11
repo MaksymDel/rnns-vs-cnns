@@ -1,0 +1,1 @@
+from spooky_author_identification.modules.seq2seq2vec import Seq2Seq2VecEncoder
