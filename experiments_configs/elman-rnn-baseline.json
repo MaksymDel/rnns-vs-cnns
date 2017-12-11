@@ -32,12 +32,12 @@
         "type": "rnn",
         "bidirectional": false,
         "input_size": 100,
-        "hidden_size": 50,
+        "hidden_size": 100,
         "num_layers": 1,
         "dropout": 0.5
       },
       "classifier_feedforward": {
-        "input_dim": 50,
+        "input_dim": 100,
         "num_layers": 2,
         "hidden_dims": [10, 3],
         "activations": ["relu", "linear"],
