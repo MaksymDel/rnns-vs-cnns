@@ -9,7 +9,7 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s - %(message)s
 
 # NOTE: This line is important!  It's what makes all of the classes in `my_library` findable by
 # AllenNLP's registry.
-from spooky_author_identification import *
+from rnns_vs_cnns import *
 
 from allennlp.commands import main  # pylint: disable=wrong-import-position
 

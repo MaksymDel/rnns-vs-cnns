@@ -1,1 +1,0 @@
-from spooky_author_identification.models.spooky_author_classifier import SpookyAuthorClassifier

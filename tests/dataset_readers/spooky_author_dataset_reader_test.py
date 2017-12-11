@@ -1,5 +1,5 @@
 from allennlp.common.testing import AllenNlpTestCase
-from spooky_author_identification.dataset_readers import SpookyAuthorsDatasetReader
+from rnns_vs_cnns.dataset_readers import SpookyAuthorsDatasetReader
 
 class TestSpookyAuthorsDatasetReader(AllenNlpTestCase):
     def test_read_from_file(self):

@@ -17,7 +17,7 @@
     "text_field_embedder": {
       "tokens": {
         "type": "embedding",
-        "pretrained_file": "data/glove/glove.6B.100d.txt.gz",
+        "pretrained_file": "data_kaggle/glove/glove.6B.100d.txt.gz",
         "embedding_dim": 100,
         "trainable": false
       }

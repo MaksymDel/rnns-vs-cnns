@@ -1,0 +1,1 @@
+from rnns_vs_cnns.modules.seq2seq2vec import Seq2Seq2VecEncoder

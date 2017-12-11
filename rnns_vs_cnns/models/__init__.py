@@ -1,0 +1,1 @@
+from rnns_vs_cnns.models.spooky_author_classifier import SpookyAuthorClassifier

@@ -16,15 +16,15 @@ The table below shows experiments results. See following section for models desc
 | boe-baseline | __0.823__ | 0.23 | 0.82 |
 | Elman-RNN-baseline | 0.785 | 0.39 | 0.82 |
 | Elman-RNN-bi | 0.807 | 0.37 | 0.83 | 
-| Elman-RNN-bi-avg | 0.815 | 0.40 | 0.84 | 
+| Elman-RNN-bi-avg | 0.815 | 0.40 | __0.84__ | 
 | LSTM-bi-avg | 0.780 | 0.43 | 0.86 |
 | GRU-bi-avg-rand | 0.817 | 0.41 | __0.85__ | 
 | GRU-bi-avg-static | 0.757 | 0.42 | 0.83 |   
-| GRU-bi-avg-nonstatic | __0.823__ | 0.42 | 0.84 | 
+| GRU-bi-avg-nonstatic | __0.823__ | 0.42 | __0.84__ | 
 | GRU-bi-avg-charseg | __0.824__ | 0.43 | __0.85__ |      
 | CNN-rand (Kim, 2014) | 0.814 | 45.0 | 0.83 |   
 | CNN-static (Kim, 2014) | 0.753 | 45.5 | __0.87__ |    
-| CNN-nonstatic (Kim, 2014) | 0.822 | __48.0__ | __0.87__ |
+| CNN-nonstatic (Kim, 2014) | __0.822__ | __48.0__ | __0.87__ |
 
 *KSAI stands for Kaggle Spooky Author Identification
 *the metric is __accuracy__ <br>
@@ -49,16 +49,22 @@ Note: words embeddings are nonstatic unless otherwise noted
 ## Hyperparameters and Training
 __experiments_configs__ folder containes hyperparameters for all the experiments (and models) (they are composed in a way to hold "all things being equal" property) 
 
+## Reproduce 
+1) Make sure you installed required [allennlp](http://github.com/allenai/allennlp) version from requirments.txt.
+2) Make sure tests pass:
+`pytest -v'
+3) Continue with following sections
+
 ## Reproduce (SST1, SST2)
-1) Download glove embeddings and put to to the data/glove folder: <br>
-`https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.6B.100d.txt.gz`
+1) Download glove embeddings and put to to the data_kaggle/glove folder: <br>
+`wget https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.6B.100d.txt.gz`
 2) Train a model (it will do early stopping and be evaluated on the test set automaticaly at the end): <br>
 `python3 -m run train experiments_configs/gru-bi-agv.json -s experiments_models/gru-bi-agv`<br>
 (you can choose another .json config to train another model, or choose another save folder)
 
 ## Reproduce (Kaggle)
-1) Download glove embeddings and put to to the data/glove folder: <br>
-`https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.6B.100d.txt.gz`
+1) Download glove embeddings and put to to the data_kaggle/glove folder: <br>
+`wget https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.6B.100d.txt.gz`
 2) Train a model: <br>
 `python3 -m run train experiments_configs/authors_classifier.json -s experiments_models/pilot`<br>
 (you can choose another .json config to train another model, or choose another save folder)

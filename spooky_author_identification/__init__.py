@@ -1,4 +1,0 @@
-from spooky_author_identification.dataset_readers import *
-from spooky_author_identification.models import *
-from spooky_author_identification.spooky_author_predictor import SpookyAuthorPredictor
-from spooky_author_identification.modules import *
