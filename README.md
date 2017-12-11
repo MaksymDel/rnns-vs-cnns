@@ -10,17 +10,25 @@ General idea is the same:
 | boe-baseline | 0.823 / 0.961 | x | x | x |  
 | Elman-RNN-baseline | 0.785 / 0.937 | x | x | x |
 | Elman-RNN-bi | 0.807 / 0.960 | x | x | x |  
-| Elman-RNN-bi-avg | x | x | x | x | 
+| Elman-RNN-bi-avg | 0.815 / 0.952 | x | x | x | 
 | GRU-bi-avg | 0.823 / 0.951 | x | x | x |
-| LSTM-bi-avg | x | x | x | x |
+| LSTM-bi-avg | 0.780 / 0.939 | x | x | x |
 | GRU-bi-avg-static | 0.757 / 0.939 | x | x | x |   
-| GRU-bi-avg-rand | 0.817 / 0.953 | x | x | x |   
+| GRU-bi-avg-rand | 0.817 / 0.953 | x | x | x |
+| GRU-bi-avg-charseq | 0.824 / 0.953 | x | x | x |     
 | CNN-rand |  | 0.814 / 0.952 | x | x |   
 | CNN-static | 0.753 / 0.920 | x | x | x |   
 | CNN-nonstatic | 0.822 / 0.959 | x | x | x |
-| GRU-bi-avg-charseq | 0.824 / 0.953 | x | x | x |  
 __Metric__: accuracy_top1 / accuracy_top2 <br>
 __NB!__: you can find configs for all the models in experiments_configs folder (names align)
+
+
+    "train_data_path": "data_cnn_paper/stsa.binary.phrases.train",
+    "validation_data_path": "data_cnn_paper/stsa.binary.dev",
+    "test_data_path": "data_cnn_paper/stsa.binary.test",
+    "evaluate_on_test": true,
+
+
 
 python3 -m run evaluate --archive_file experiments_models/boe-baseline/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
 python3 -m run evaluate --archive_file experiments_models/elman-rnn-baseline/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0

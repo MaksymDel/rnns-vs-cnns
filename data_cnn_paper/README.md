@@ -1,4 +1,5 @@
 # Datasets
+Note: [original data repo](https://github.com/harvardnlp/sent-conv-torch/tree/master/data)
 
 **Data** | Classes | Average sentence length | Dataset size | Vocab size | Number of words present in word2vec | Test size
 --- | --- | --- | --- | --- | --- | ---
