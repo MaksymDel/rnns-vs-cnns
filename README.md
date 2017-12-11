@@ -1,14 +1,14 @@
 # CNNs vs RNNs for Sentence Classification
 This project takes as background [CNNs for sentence classification](https://arxiv.org/pdf/1408.5882.pdf) paper and does following: 
 1) Reimplements models from the paper
-2) Adds a new dataset to verify how conclusion stated in the paper generalize to a new domain
+2) Adds a new dataset to verify to what extend conclusion stated in the paper generalize to a new domain
 3) Implements several recurrent architectures and evaluates them on both new and paper's data
 
-## Models (WIP)
+## Models
 General idea is the same:
 1) Encode a source sentence in some way (RNN / CNN) to get single a vector sentence representation
 2) Project this representation onto desired classes
-The table below shows experiments results. See following section for models descriptions.
+3) The table below shows experiments results. See following section for models descriptions.
 
 ## Results
 | Model/Dataset | KSAI | SST1 | SST2 |
