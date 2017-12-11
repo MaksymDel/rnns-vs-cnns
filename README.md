@@ -5,37 +5,50 @@ General idea is the same:
 2) Project this representation onto desired classes
 
 ## Results
-| Model | KSA | SST1 | SST2 | TREC |
+| Model | SAI | SST1 | SST2 | TREC |
 | --- | --- | ---| --- | --- |
-| dummy-baseline | x | x | x | x |
-| boe-baseline | x | x | x | x |  
-| Elman-RNN-baseline | x | x | x | x |
-| Elman-RNN-bi | x | x | x | x |  
+| boe-baseline | 0.823 / 0.961 | x | x | x |  
+| Elman-RNN-baseline | 0.785 / 0.937 | x | x | x |
+| Elman-RNN-bi | 0.807 / 0.960 | x | x | x |  
 | Elman-RNN-bi-avg | x | x | x | x | 
-| GRU-bi-avg | x | x | x | x |
+| GRU-bi-avg | 0.823 / 0.951 | x | x | x |
 | LSTM-bi-avg | x | x | x | x |
-| GRU-static | x | x | x | x |   
-| GRU-rand | x | x | x | x |   
-| CNN-rand | x | x | x | x |   
-| CNN-static | x | x | x | x |   
-| CNN-non-static | x | x | x | x |
-| GRU-word-char-RNN | x | x | x | x |  
+| GRU-bi-avg-static | 0.757 / 0.939 | x | x | x |   
+| GRU-bi-avg-rand | 0.817 / 0.953 | x | x | x |   
+| CNN-rand |  | 0.814 / 0.952 | x | x |   
+| CNN-static | 0.753 / 0.920 | x | x | x |   
+| CNN-nonstatic | 0.822 / 0.959 | x | x | x |
+| GRU-bi-avg-charseq | 0.824 / 0.953 | x | x | x |  
+__Metric__: accuracy_top1 / accuracy_top2 <br>
+__NB!__: you can find configs for all the models in experiments_configs folder (names align)
+
+python3 -m run evaluate --archive_file experiments_models/boe-baseline/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
+python3 -m run evaluate --archive_file experiments_models/elman-rnn-baseline/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
+python3 -m run evaluate --archive_file experiments_models/elman-rnn-bi/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
+python3 -m run evaluate --archive_file experiments_models/elman-rnn-bi-avg/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
+python3 -m run evaluate --archive_file experiments_models/gru-bi-avg/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
+python3 -m run evaluate --archive_file experiments_models/lstm-bi-avg/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
+python3 -m run evaluate --archive_file experiments_models/gru-bi-avg-static/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
+python3 -m run evaluate --archive_file experiments_models/gru-bi-avg-rand/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
+python3 -m run evaluate --archive_file experiments_models/cnn-rand/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
+python3 -m run evaluate --archive_file experiments_models/cnn-static/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
+python3 -m run evaluate --archive_file experiments_models/cnn-nonstatic/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
+python3 -m run evaluate --archive_file experiments_models/gru-bi-avg-charseg/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
 
 Different approaches are different in a way we encode the sentence <br>
 Models I experimented with: <br> 
-- __dummy-baseline__: just always predict most common author
 - __boe-baseline__: just avarage over word embeddings 
 - __Elman-RNN-baseline__: simple Elman RNN; starting point for future experiments; see "Hyperparameters and Training" section for details
 - __Elman-RNN-bi__: the same as RNNs above, but bidirectional 
 - __Elman-RNN-bi-avg__: use average over RNN hidden states instead of just last hidden state 
 - __GRU-bi-avg__: use GRU cells
 - __LSTM-bi-avg__: use LSTM cells
-- __GRU-static__: embeddings are initialized with vectors from _glove_ and fixed  
-- __GRU-rand__:  embeddings are randomly initialized
+- __GRU-bi-avg-static__: embeddings are initialized with vectors from _glove_ and fixed  
+- __GRU-bi-avg-rand__:  embeddings are randomly initialized
 - __CNN-rand__:  word embeddings are randomly initialized
 - __CNN-static__: word embeddings are initialized with vectors from _glove_ and fixed  
 - __CNN-nonstatic__: same as CNN-static, but pre trained vectors are fine tuned
-- __GRU-word-char-RNN__: word embeddings plus CNN based word characters embeddings  
+- __GRU-bi-avg-charseq__: word embeddings plus CNN based word characters embeddings  
 Note: words embeddings are nonstatic unless otherwise noted
 
 ## Hyperparameters and Training
@@ -70,7 +83,7 @@ so I attached prepared data to this repo (/data folder): `preprocessed-train.txt
 6) Convert test set to the Kaggle submision format: <br>
 `python3 data_utils/predict_utils.py data/submission-pilot.jsonl data/submission-pilot.csv`  <br>
 (assumes python3 points to python 3.6)
-7) You can reproduce for other datasets by changing dataset path in configs and following almost the same procedure as above
+Note: you can reproduce for other datasets by changing dataset path in configs and following almost the same procedure as above
 
 ## Data preprocessing
 The data is first split into dev (3000 points) and train sets (code is in the /data_utils folder), and then truecased and tokenized using [moses scripts](https://github.com/marian-nmt/moses-scripts)    

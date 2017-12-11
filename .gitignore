@@ -22,5 +22,4 @@ data_kaggle/train.zip
 data_kaggle/train_X.txt
 data_kaggle/train_y.txt
 data_kaggle/glove/glove.6B.100d.txt.gz
-data_kaggle/tc-tok-test_public_X*
 data_kaggle/submission*
