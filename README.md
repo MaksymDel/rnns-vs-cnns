@@ -46,9 +46,8 @@ Sentence encoding variations I experimented with: <br>
 - __Elman-RNN-bi-avg__: use average over RNN hidden states instead of just last hidden state 
 - __GRU-bi-avg__: use GRU cells
 - __LSTM-bi-avg__: use LSTM cells
-- __RNN-rand__:  embeddings are randomly initialized
-- __RNN-static__: embeddings are initialized with vectors from _glove_ and fixed  
-- __RNN-non-static__: same as RNN-static, but pre trained vectors are fine tuned
+- __GRU-static__: embeddings are initialized with vectors from _glove_ and fixed  
+- __GRU-rand__:  embeddings are randomly initialized
 - __CNN-rand__:  word embeddings are randomly initialized
 - __CNN-static__: word embeddings are initialized with vectors from _glove_ and fixed  
 - __CNN-non-static__: same as CNN-static, but pre trained vectors are fine tuned
