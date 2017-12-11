@@ -5,20 +5,20 @@ General idea is the same:
 2) Project this representation onto desired classes
 
 ## Results
-| Model | SAI | SST1 | SST2 | TREC |
-| --- | --- | ---| --- | --- |
-| boe-baseline | 0.823 / 0.961 | x | x | x |  
-| Elman-RNN-baseline | 0.785 / 0.937 | x | x | x |
-| Elman-RNN-bi | 0.807 / 0.960 | x | x | x |  
-| Elman-RNN-bi-avg | 0.815 / 0.952 | x | x | x | 
-| GRU-bi-avg | 0.823 / 0.951 | x | x | x |
-| LSTM-bi-avg | 0.780 / 0.939 | x | x | x |
-| GRU-bi-avg-static | 0.757 / 0.939 | x | x | x |   
-| GRU-bi-avg-rand | 0.817 / 0.953 | x | x | x |
-| GRU-bi-avg-charseq | 0.824 / 0.953 | x | x | x |     
-| CNN-rand |  | 0.814 / 0.952 | x | x |   
-| CNN-static | 0.753 / 0.920 | x | x | x |   
-| CNN-nonstatic | 0.822 / 0.959 | x | x | x |
+| Model | SAI | SST1 | SST2 |
+| --- | --- | ---| --- | 
+| boe-baseline | 0.823 | x | 0.82 |
+| Elman-RNN-baseline | 0.785 | x | 0.82 |
+| Elman-RNN-bi | 0.807 | x | 0.83 | 
+| Elman-RNN-bi-avg | 0.815 | x | 0.84 | 
+| LSTM-bi-avg | 0.780 | x | 0.86 |
+| GRU-bi-avg-rand | 0.817 | x | 0.85 | 
+| GRU-bi-avg-static | 0.757 | x | 0.83 |   
+| GRU-bi-avg-nonstatic | 0.823 | x | 0.84 | 
+| GRU-bi-avg-charseg | 0.824 | x | 0.85 |      
+| CNN-rand (Kim, 2014) | 0.814 | x | 0.83 |   
+| CNN-static (Kim, 2014) | 0.753 | x | 0.87 |    
+| CNN-nonstatic (Kim, 2014) | 0.822 | x | 0.87 |
 __Metric__: accuracy_top1 / accuracy_top2 <br>
 __NB!__: you can find configs for all the models in experiments_configs folder (names align)
 
@@ -32,7 +32,7 @@ __NB!__: you can find configs for all the models in experiments_configs folder (
 
 
 python3 -m run evaluate --archive_file experiments_models/boe-baseline/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
-python3 -m run evaluate --archive_file experiments_models/elman-rnn-baseline/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
+python3 -m run train --archive_file experiments_models/elman-rnn-baseline/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
 python3 -m run evaluate --archive_file experiments_models/elman-rnn-bi/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
 python3 -m run evaluate --archive_file experiments_models/elman-rnn-bi-avg/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
 python3 -m run evaluate --archive_file experiments_models/gru-bi-avg/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0

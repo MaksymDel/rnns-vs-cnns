@@ -15,11 +15,11 @@
     },
     "cnn_paper_dataset": true
   },
-  "train_data_path": "data_cnn_paper/stsa.binary.phrases.train",
-  "validation_data_path": "data_cnn_paper/stsa.binary.dev",
-  "test_data_path": "data_cnn_paper/stsa.binary.test",
+  "train_data_path": "data_cnn_paper/stsa.fine.phrases.train",
+  "validation_data_path": "data_cnn_paper/stsa.fine.dev",
+  "test_data_path": "data_cnn_paper/stsa.fine.test",
   "evaluate_on_test": true,
-"model": {
+  "model": {
     "type": "author_classifier",
     "text_field_embedder": {
       "tokens": {
