@@ -17,11 +17,9 @@
   "model": {
     "type": "author_classifier",
     "text_field_embedder": {
-      "token_characters":{
-        "type": "character_encoding",
-        "embedding": {
-          "embedding_dim": 100
-        }
+      "tokens": {
+        "type": "embedding",
+        "embedding_dim": 100
       }
     },
     "sentence_encoder": {
