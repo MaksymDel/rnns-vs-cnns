@@ -23,29 +23,19 @@
     "text_field_embedder": {
       "tokens": {
         "type": "embedding",
-        //"pretrained_file": "data/glove/glove.6B.100d.txt.gz",
-        "embedding_dim": 100
-        //"trainable": false
+        "pretrained_file": "data/glove/glove.6B.100d.txt.gz",
+        "embedding_dim": 100,
+        "trainable": true
       }
     },
     "sentence_encoder": {
-      "type": "seq2seq2vec",
-      "seq2seq_encoder": {
-        "type": "gru",
-        "bidirectional": true,
-        "input_size": 100,
-        "hidden_size": 100,
-        "num_layers": 1,
-        "dropout": 0.5
-      },
-      "seq2vec_encoder": {
-        "type": "boe",
-        "averaged": true,
-        "embedding_dim": 200
-      }
+      "type": "cnn",
+      "embedding_dim": 100,
+      "ngram_filter_sizes": [3, 4, 5],
+      "num_filters": 100
     },
     "classifier_feedforward": {
-      "input_dim": 200,
+      "input_dim": 100,
       "num_layers": 2,
       "hidden_dims": [10, 3],
       "activations": ["relu", "linear"],
