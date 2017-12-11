@@ -51,7 +51,7 @@
     "classifier_feedforward": {
       "input_dim": 300,
       "num_layers": 2,
-      "hidden_dims": [10, 3],
+      "hidden_dims": [10, 5],
       "activations": ["relu", "linear"],
       "dropout": [0.5, 0.0]
     },
