@@ -51,16 +51,26 @@ Sentence encoding variations I experimented with: <br>
 - __CNN-rand__:  word embeddings are randomly initialized
 - __CNN-static__: word embeddings are initialized with vectors from _glove_ and fixed  
 - __CNN-non-static__: same as CNN-static, but pre trained vectors are fine tuned
-- __RNN-char-seg__: RNN over word characters with explicit word segmentation
-- __RNN-char__: RNN over characters without explicit word segmentation
-- __CNN-char-seg__: CNN over word characters with explicit word segmentation
-- __CNN-char__: CNN over characters without explicit word segmentation
-- __RNN/CNN-word-char-CNN__: word embeddings plus CNN based word characters embeddings  
-- __RNN/CNN-word-char-RNN__: word embeddings plus CNN based word characters embeddings  
-- __RNN/CNN-ling__: use linguistic tags to augment RNN 
+- __GRU-word-char-RNN__: word embeddings plus CNN based word characters embeddings  
+
+## Results
+| Model | KSA | SST1 | SST2 | TREC |
+| --- | --- |
+| dummy-baseline |
+| boe-baseline |   
+| Elman-RNN-baseline |
+| Elman-RNN-bi |  
+| Elman-RNN-bi-avg | 
+| GRU-bi-avg |
+| LSTM-bi-avg |
+| GRU-static |   
+| GRU-rand |   
+| CNN-rand |   
+| CNN-static |   
+| CNN-non-static |
+| GRU-word-char-RNN |  
+
 
 
 ## Hyperparameters and Training
-
-## Future work
-It is interesting also to see how rubust the results are across different datasets. 
+__experiments_configs__ folder containes hyperparameters for all the experiments (and models) (they are composed in a way to hold "all things being equal" property) 

@@ -41,9 +41,11 @@ class SpookyAuthorsDatasetReader(DatasetReader):
     """
     def __init__(self,
                  tokenizer: Tokenizer = None,
-                 token_indexers: Dict[str, TokenIndexer] = None) -> None:
+                 token_indexers: Dict[str, TokenIndexer] = None,
+                 cnn_paper_dataset = False) -> None:
         self._tokenizer = tokenizer or WordTokenizer()
         self._token_indexers = token_indexers or {"tokens": SingleIdTokenIndexer()}
+        self._cnn_paper_dataset = cnn_paper_dataset
 
     @overrides
     def read(self, file_path):
@@ -54,12 +56,16 @@ class SpookyAuthorsDatasetReader(DatasetReader):
                 line = line.strip("\n")
                 if not line:
                     continue
-                line_split = line.split('@')
-                sentence = line_split[0]
-                if len(line_split) > 1:
-                    author = line_split[1]
+                if self._cnn_paper_dataset == False:
+                    line_split = line.split('@')
+                    sentence = line_split[0]
+                    if len(line_split) > 1:
+                        author = line_split[1]
+                    else:
+                        author = 'HPL' # stub for Kaggle test set without labels
                 else:
-                    author = 'HPL' # stub for Kaggle test set without labels
+                    author = line[0]
+                    sentence = line[2:]
                 instances.append(self.text_to_instance(sentence, author))
         if not instances:
             raise ConfigurationError("No instances read!")
@@ -79,5 +85,6 @@ class SpookyAuthorsDatasetReader(DatasetReader):
     def from_params(cls, params: Params) -> 'SpookyAuthorsDatasetReader':
         tokenizer = Tokenizer.from_params(params.pop('tokenizer', {}))
         token_indexers = TokenIndexer.dict_from_params(params.pop('token_indexers', {}))
+        cnn_paper_dataset = params.pop("cnn_paper_dataset", False)
         params.assert_empty(cls.__name__)
-        return cls(tokenizer=tokenizer, token_indexers=token_indexers)
+        return cls(tokenizer=tokenizer, token_indexers=token_indexers, cnn_paper_dataset=cnn_paper_dataset)
