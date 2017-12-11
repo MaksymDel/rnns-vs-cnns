@@ -17,7 +17,7 @@
   "model": {
     "type": "author_classifier",
     "text_field_embedder": {
-      "tokens": {
+      "token_characters": {
         "type": "embedding",
         "embedding_dim": 100
       }
