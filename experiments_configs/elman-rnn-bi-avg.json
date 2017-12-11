@@ -34,18 +34,18 @@
         "type": "rnn",
         "bidirectional": true,
         "input_size": 100,
-        "hidden_size": 100,
+        "hidden_size": 50,
         "num_layers": 1,
         "dropout": 0.5
       },
       "seq2vec_encoder": {
         "type": "boe",
         "averaged": true,
-        "embedding_dim": 200
+        "embedding_dim": 100
       }
     },
     "classifier_feedforward": {
-      "input_dim": 200,
+      "input_dim": 100,
       "num_layers": 2,
       "hidden_dims": [50, 3],
       "activations": ["relu", "linear"],
