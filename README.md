@@ -53,13 +53,16 @@ Sentence encoding variations I experimented with: <br>
 - __CNN-rand__:  word embeddings are randomly initialized
 - __CNN-static__: word embeddings are initialized with vectors from _glove_ and fixed  
 - __CNN-non-static__: same as CNN-static, but pre trained vectors are fine tuned
-- __RNN/CNN-word-char-CNN__: word embeddings plus CNN based word characters embeddings  
-- __RNN/CNN-word-char-RNN__: word embeddings plus CNN based word characters embeddings  
-- __RNN/CNN-ling__: use linguistic tags to augment RNN 
 - __RNN-char-seg__: RNN over word characters with explicit word segmentation
 - __RNN-char__: RNN over characters without explicit word segmentation
 - __CNN-char-seg__: CNN over word characters with explicit word segmentation
 - __CNN-char__: CNN over characters without explicit word segmentation
+- __RNN/CNN-word-char-CNN__: word embeddings plus CNN based word characters embeddings  
+- __RNN/CNN-word-char-RNN__: word embeddings plus CNN based word characters embeddings  
+- __RNN/CNN-ling__: use linguistic tags to augment RNN 
+
+
+## Hyperparameters and Training
 
 ## Future work
 It is interesting also to see how rubust the results are across different datasets. 
