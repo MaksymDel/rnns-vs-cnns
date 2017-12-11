@@ -46,7 +46,7 @@
       "seq2seq_encoder": {
         "type": "gru",
         "bidirectional": true,
-        "input_size": 100,
+        "input_size": 150,
         "hidden_size": 100,
         "num_layers": 1,
         "dropout": 0.5

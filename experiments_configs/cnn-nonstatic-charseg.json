@@ -43,7 +43,7 @@
     },
     "sentence_encoder": {
       "type": "cnn",
-      "embedding_dim": 100,
+      "embedding_dim": 150,
       "ngram_filter_sizes": [3, 4, 5],
       "num_filters": 100
     },
