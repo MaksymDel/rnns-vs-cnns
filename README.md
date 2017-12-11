@@ -41,12 +41,11 @@ Different approaches differ in a way the encode the sentence <br>
 Sentence encoding variations I experimented with: <br> 
 - __dummy-baseline__: just always predict most common author
 - __boe-baseline__: just avarage over word embeddings 
-- __RNN-baseline__: tuned baseline RNN; starting point for future experiments; see "Hyperparameters and Training" section for details 
-- __Elman-RNN__: use simple Elman RNN cells
-- __GRU__: use GRU cells
-- __LSTM__: use LSTM cells
-- __RNN-uni__: the same as RNNs above, but unidirectional
-- __RNN-avg-of-states__: use average over RNN hidden states instead of just last hidden state
+- __Elman-RNN-baseline__: simple Elman RNN; starting point for future experiments; see "Hyperparameters and Training" section for details
+- __Elman-RNN-bi__: the same as RNNs above, but unidirectional 
+- __Elman-RNN-bi-avg__: use average over RNN hidden states instead of just last hidden state 
+- __GRU-bi__: use GRU cells
+- __LSTM-bi__: use LSTM cells
 - __RNN-rand__:  embeddings are randomly initialized
 - __RNN-static__: embeddings are initialized with vectors from _glove_ and fixed  
 - __RNN-non-static__: same as RNN-static, but pre trained vectors are fine tuned
