@@ -5,7 +5,7 @@ General idea is the same:
 2) Project this representation onto desired classes
 
 ## Results
-| Model | SAI | SST1 | SST2 |
+| Model/Dataset | KSAI | SST1 | SST2 |
 | --- | --- | ---| --- | 
 | boe-baseline | 0.823 | x | 0.82 |
 | Elman-RNN-baseline | 0.785 | x | 0.82 |
@@ -19,8 +19,9 @@ General idea is the same:
 | CNN-rand (Kim, 2014) | 0.814 | x | 0.83 |   
 | CNN-static (Kim, 2014) | 0.753 | x | 0.87 |    
 | CNN-nonstatic (Kim, 2014) | 0.822 | x | 0.87 |
-__Metric__: accuracy_top1 / accuracy_top2 <br>
-__NB!__: you can find configs for all the models in experiments_configs folder (names align)
+*KSAI stands for Kaggle Spooky Author Identification
+*the metric is __accuracy__ <br>
+*you can find __configs__ for all the models in __experiments_configs__ folder (names align)
 
 
 "cnn_paper_dataset": true
@@ -28,21 +29,6 @@ __NB!__: you can find configs for all the models in experiments_configs folder (
     "validation_data_path": "data_cnn_paper/stsa.binary.dev",
     "test_data_path": "data_cnn_paper/stsa.binary.test",
     "evaluate_on_test": true,
-
-
-
-python3 -m run evaluate --archive_file experiments_models/boe-baseline/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
-python3 -m run train --archive_file experiments_models/elman-rnn-baseline/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
-python3 -m run evaluate --archive_file experiments_models/elman-rnn-bi/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
-python3 -m run evaluate --archive_file experiments_models/elman-rnn-bi-avg/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
-python3 -m run evaluate --archive_file experiments_models/gru-bi-avg/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
-python3 -m run evaluate --archive_file experiments_models/lstm-bi-avg/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
-python3 -m run evaluate --archive_file experiments_models/gru-bi-avg-static/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
-python3 -m run evaluate --archive_file experiments_models/gru-bi-avg-rand/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
-python3 -m run evaluate --archive_file experiments_models/cnn-rand/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
-python3 -m run evaluate --archive_file experiments_models/cnn-static/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
-python3 -m run evaluate --archive_file experiments_models/cnn-nonstatic/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
-python3 -m run evaluate --archive_file experiments_models/gru-bi-avg-charseg/model.tar.gz --evaluation_data_file data_kaggle/preprocessed-dev.txt --cuda_device 0
 
 Different approaches are different in a way we encode the sentence <br>
 Models I experimented with: <br> 
