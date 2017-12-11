@@ -26,10 +26,10 @@ General idea is the same:
 | CNN-static (Kim, 2014) | 0.753 | 45.5 | __0.87__ |    
 | CNN-nonstatic (Kim, 2014) | __0.822__ | __48.0__ | __0.87__ |
 
-*KSAI stands for Kaggle Spooky Author Identification
-*the metric is __accuracy__ <br>
-*you can find __configs__ for all the models in __experiments_configs__ folder (names align)
-*hyperparameters for RNNs were tuned on KSAI  
+* KSAI stands for Kaggle Spooky Author Identification
+* The metric is __accuracy__ <br>
+* You can find __configs__ for all the models in __experiments_configs__ folder (names align)
+* Hyperparameters for RNNs were tuned on KSAI  
 
 ## Modes descriptions:
 - __boe-baseline__: just avarage over word embeddings 
