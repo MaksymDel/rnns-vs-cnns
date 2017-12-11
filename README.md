@@ -42,7 +42,7 @@ Sentence encoding variations I experimented with: <br>
 - __dummy-baseline__: just always predict most common author
 - __boe-baseline__: just avarage over word embeddings 
 - __Elman-RNN-baseline__: simple Elman RNN; starting point for future experiments; see "Hyperparameters and Training" section for details
-- __Elman-RNN-bi__: the same as RNNs above, but unidirectional 
+- __Elman-RNN-bi__: the same as RNNs above, but bidirectional 
 - __Elman-RNN-bi-avg__: use average over RNN hidden states instead of just last hidden state 
 - __GRU-bi__: use GRU cells
 - __LSTM-bi__: use LSTM cells
