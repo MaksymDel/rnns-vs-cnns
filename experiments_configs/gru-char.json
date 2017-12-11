@@ -21,8 +21,7 @@
         "type": "embedding",
         "embedding_dim": 100
        }
-     }
-    },
+     },
     "sentence_encoder": {
       "type": "gru",
       "bidirectional": true,
