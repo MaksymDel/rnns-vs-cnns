@@ -55,20 +55,20 @@ Sentence encoding variations I experimented with: <br>
 
 ## Results
 | Model | KSA | SST1 | SST2 | TREC |
-| --- | --- |
-| dummy-baseline |
-| boe-baseline |   
-| Elman-RNN-baseline |
-| Elman-RNN-bi |  
-| Elman-RNN-bi-avg | 
-| GRU-bi-avg |
-| LSTM-bi-avg |
-| GRU-static |   
-| GRU-rand |   
-| CNN-rand |   
-| CNN-static |   
-| CNN-non-static |
-| GRU-word-char-RNN |  
+| --- | --- | ---| --- | --- |
+| dummy-baseline | x | x | x | x |
+| boe-baseline | x | x | x | x |  
+| Elman-RNN-baseline | x | x | x | x |
+| Elman-RNN-bi | x | x | x | x |  
+| Elman-RNN-bi-avg | x | x | x | x | 
+| GRU-bi-avg | x | x | x | x |
+| LSTM-bi-avg | x | x | x | x |
+| GRU-static | x | x | x | x |   
+| GRU-rand | x | x | x | x |   
+| CNN-rand | x | x | x | x |   
+| CNN-static | x | x | x | x |   
+| CNN-non-static | x | x | x | x |
+| GRU-word-char-RNN | x | x | x | x |  
 
 
 
