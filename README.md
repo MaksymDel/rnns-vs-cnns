@@ -1,5 +1,5 @@
 # RNNs vs CNNs for Sentence Classification
-This project takes as background [CNNs for sentence classification](https://arxiv.org/pdf/1408.5882.pdf) paper and does following: 
+This project takes as a background [CNNs for sentence classification](https://arxiv.org/pdf/1408.5882.pdf) paper and does following: 
 1) Reimplements models from the paper
 2) Adds a new dataset to verify to what extend conclusion stated in the paper generalize to a new domain
 3) Implements several recurrent architectures and evaluates them on both new and paper's data
