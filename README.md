@@ -39,20 +39,27 @@ General idea is the same:
 
 Different approaches differ in a way the encode the sentence <br>
 Sentence encoding variations I experimented with: <br> 
-- RNN over word embeddings -> take last encoder output 
-- RNN over word embeddings -> concatenate all encoder outputs
-- CNN over word embeddings 
-
-- char-RNN with explicit word segmentation
-- char-CNN with explicit word segmentation
-
-- char-RNN without explicit word segmentation
-- char-CNN without explicit word segmentation
-
-- RNN over word embeddings + CNN based word characters embeddings
-- RNN over word embeddings + linguistic tegs
-
-- RNN over word embeddings + linguistic tegs + CNN based word characters embeddings
+- __dummy-baseline__: just always predict most common author
+- __boe-baseline__: just avarage over word embeddings 
+- __RNN-baseline__: tuned baseline RNN; starting point for future experiments; see "Hyperparameters and Training" section for details 
+- __Elman-RNN__: use simple Elman RNN cells
+- __GRU__: use GRU cells
+- __LSTM__: use LSTM cells
+- __RNN-uni__: the same as RNNs above, but unidirectional
+- __RNN-avg-of-states__: use average over RNN hidden states instead of just last hidden state
+- __RNN-rand__:  embeddings are randomly initialized
+- __RNN-static__: embeddings are initialized with vectors from _glove_ and fixed  
+- __RNN-non-static__: same as RNN-static, but pre trained vectors are fine tuned
+- __CNN-rand__:  word embeddings are randomly initialized
+- __CNN-static__: word embeddings are initialized with vectors from _glove_ and fixed  
+- __CNN-non-static__: same as CNN-static, but pre trained vectors are fine tuned
+- __RNN/CNN-word-char-CNN__: word embeddings plus CNN based word characters embeddings  
+- __RNN/CNN-word-char-RNN__: word embeddings plus CNN based word characters embeddings  
+- __RNN/CNN-ling__: use linguistic tags to augment RNN 
+- __RNN-char-seg__: RNN over word characters with explicit word segmentation
+- __RNN-char__: RNN over characters without explicit word segmentation
+- __CNN-char-seg__: CNN over word characters with explicit word segmentation
+- __CNN-char__: CNN over characters without explicit word segmentation
 
 ## Future work
-It is interesting also to see how rubust are results across different datasets. 
+It is interesting also to see how rubust the results are across different datasets. 
