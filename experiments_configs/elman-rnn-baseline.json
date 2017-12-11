@@ -14,16 +14,16 @@
         }
       }
     },
-    "train_data_path": "data/preprocessed-train.txt",
-    "validation_data_path": "data/preprocessed-dev.txt",
-    "test_data_path": "data/tc-tok-test_public_X.txt",
+    "train_data_path": "data_kaggle/preprocessed-train.txt",
+    "validation_data_path": "data_kaggle/preprocessed-dev.txt",
+    "test_data_path": "data_kaggle/tc-tok-test_public_X.txt",
     "evaluate_on_test": false,
     "model": {
       "type": "author_classifier",
       "text_field_embedder": {
         "tokens": {
           "type": "embedding",
-          "pretrained_file": "data/glove/glove.6B.100d.txt.gz",
+          "pretrained_file": "data_kaggle/glove/glove.6B.100d.txt.gz",
           "embedding_dim": 100,
           "trainable": true
         }
