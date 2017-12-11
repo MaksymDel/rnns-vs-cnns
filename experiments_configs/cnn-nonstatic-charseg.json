@@ -11,6 +11,9 @@
       "tokens": {
         "type": "single_id",
         "lowercase_tokens": false
+      },
+      "token_characters": {
+        "type": "characters"
       }
     }
   },
