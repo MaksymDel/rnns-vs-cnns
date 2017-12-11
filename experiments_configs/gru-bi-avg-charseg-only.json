@@ -23,7 +23,7 @@
       "token_characters":{
         "type": "character_encoding",
         "embedding": {
-          "embedding_dim": 24
+          "embedding_dim": 50
         },
         "encoder": {
           "type": "cnn",
