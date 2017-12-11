@@ -8,19 +8,19 @@ moses-scripts
 
 # no temporary data files
 tests/fixtures/pilot
-data/dev_X.txt
-data/dev_y.txt
-data/tc-tok-dev.txt
-data/tc-tok-dev_X.txt
-data/tc-tok-train_X.txt
-data/test.zip
-data/test_public_X.txt
-data/tok-dev_X.txt
-data/tok-test_public_X.txt
-data/tok-train_X.txt
-data/train.zip
-data/train_X.txt
-data/train_y.txt
-data/glove/glove.6B.100d.txt.gz
-data/tc-tok-test_public_X*
-data/submission*
+data_kaggle/dev_X.txt
+data_kaggle/dev_y.txt
+data_kaggle/tc-tok-dev.txt
+data_kaggle/tc-tok-dev_X.txt
+data_kaggle/tc-tok-train_X.txt
+data_kaggle/test.zip
+data_kaggle/test_public_X.txt
+data_kaggle/tok-dev_X.txt
+data_kaggle/tok-test_public_X.txt
+data_kaggle/tok-train_X.txt
+data_kaggle/train.zip
+data_kaggle/train_X.txt
+data_kaggle/train_y.txt
+data_kaggle/glove/glove.6B.100d.txt.gz
+data_kaggle/tc-tok-test_public_X*
+data_kaggle/submission*
