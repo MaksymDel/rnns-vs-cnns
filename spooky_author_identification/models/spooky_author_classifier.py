@@ -77,10 +77,8 @@ class SpookyAuthorClassifier(Model):
         embedded_sentence = self.text_field_embedder(sentence)
         sentence_mask = util.get_text_field_mask(sentence)
         encoded_sentence = self.sentence_encoder(embedded_sentence, sentence_mask)
-
         logits = self.classifier_feedforward(encoded_sentence)
         class_probabilities = F.softmax(logits)
-
         output_dict = {"class_probabilities": class_probabilities}
 
         if label is not None:
