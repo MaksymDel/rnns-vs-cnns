@@ -4,23 +4,6 @@ General idea is the same:
 1) Encode source sentence to get single a vector sentence representation
 2) Project this representation onto desired classes
 
-Different approaches are different in a way we encode the sentence <br>
-Models I experimented with: <br> 
-- __dummy-baseline__: just always predict most common author
-- __boe-baseline__: just avarage over word embeddings 
-- __Elman-RNN-baseline__: simple Elman RNN; starting point for future experiments; see "Hyperparameters and Training" section for details
-- __Elman-RNN-bi__: the same as RNNs above, but bidirectional 
-- __Elman-RNN-bi-avg__: use average over RNN hidden states instead of just last hidden state 
-- __GRU-bi-avg__: use GRU cells
-- __LSTM-bi-avg__: use LSTM cells
-- __GRU-static__: embeddings are initialized with vectors from _glove_ and fixed  
-- __GRU-rand__:  embeddings are randomly initialized
-- __CNN-rand__:  word embeddings are randomly initialized
-- __CNN-static__: word embeddings are initialized with vectors from _glove_ and fixed  
-- __CNN-nonstatic__: same as CNN-static, but pre trained vectors are fine tuned
-- __GRU-word-char-RNN__: word embeddings plus CNN based word characters embeddings  
-Note: words embeddings are nonstatic unless otherwise noted
-
 ## Results
 | Model | KSA | SST1 | SST2 | TREC |
 | --- | --- | ---| --- | --- |
@@ -37,6 +20,23 @@ Note: words embeddings are nonstatic unless otherwise noted
 | CNN-static | x | x | x | x |   
 | CNN-non-static | x | x | x | x |
 | GRU-word-char-RNN | x | x | x | x |  
+
+Different approaches are different in a way we encode the sentence <br>
+Models I experimented with: <br> 
+- __dummy-baseline__: just always predict most common author
+- __boe-baseline__: just avarage over word embeddings 
+- __Elman-RNN-baseline__: simple Elman RNN; starting point for future experiments; see "Hyperparameters and Training" section for details
+- __Elman-RNN-bi__: the same as RNNs above, but bidirectional 
+- __Elman-RNN-bi-avg__: use average over RNN hidden states instead of just last hidden state 
+- __GRU-bi-avg__: use GRU cells
+- __LSTM-bi-avg__: use LSTM cells
+- __GRU-static__: embeddings are initialized with vectors from _glove_ and fixed  
+- __GRU-rand__:  embeddings are randomly initialized
+- __CNN-rand__:  word embeddings are randomly initialized
+- __CNN-static__: word embeddings are initialized with vectors from _glove_ and fixed  
+- __CNN-nonstatic__: same as CNN-static, but pre trained vectors are fine tuned
+- __GRU-word-char-RNN__: word embeddings plus CNN based word characters embeddings  
+Note: words embeddings are nonstatic unless otherwise noted
 
 ## Hyperparameters and Training
 __experiments_configs__ folder containes hyperparameters for all the experiments (and models) (they are composed in a way to hold "all things being equal" property) 
