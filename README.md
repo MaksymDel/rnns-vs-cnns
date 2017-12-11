@@ -23,6 +23,7 @@ __Metric__: accuracy_top1 / accuracy_top2 <br>
 __NB!__: you can find configs for all the models in experiments_configs folder (names align)
 
 
+"cnn_paper_dataset": true
     "train_data_path": "data_cnn_paper/stsa.binary.phrases.train",
     "validation_data_path": "data_cnn_paper/stsa.binary.dev",
     "test_data_path": "data_cnn_paper/stsa.binary.test",
