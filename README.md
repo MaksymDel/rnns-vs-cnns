@@ -52,7 +52,7 @@ __experiments_configs__ folder containes hyperparameters for all the experiments
 ## Reproduce 
 1) Make sure you installed required [allennlp](http://github.com/allenai/allennlp) version from requirments.txt.
 2) Make sure tests pass:
-`pytest -v'
+`pytest -v`
 3) Continue with following sections
 
 ## Reproduce (SST1, SST2)
