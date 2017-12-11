@@ -23,11 +23,11 @@
       "token_characters":{
         "type": "character_encoding",
         "embedding": {
-          "embedding_dim": 24
+          "embedding_dim": 50
         },
         "encoder": {
           "type": "cnn",
-          "embedding_dim": 24,
+          "embedding_dim": 50,
           "num_filters": 50,
           "ngram_filter_sizes": [2,3,4]
         },
@@ -41,7 +41,7 @@
       "num_filters": 100
     },
     "classifier_feedforward": {
-      "input_dim": 150,
+      "input_dim": 300,
       "num_layers": 2,
       "hidden_dims": [10, 3],
       "activations": ["relu", "linear"],
