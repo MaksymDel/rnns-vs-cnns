@@ -29,7 +29,7 @@
       "num_filters": 100
     },
     "classifier_feedforward": {
-      "input_dim": 200,
+      "input_dim": 300,
       "num_layers": 2,
       "hidden_dims": [10, 3],
       "activations": ["relu", "linear"],
