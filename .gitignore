@@ -5,6 +5,7 @@ allennlp
 .ipynb_checkpoints
 experiments_models
 moses-scripts
+docs
 
 # no temporary data files
 tests/fixtures/pilot
