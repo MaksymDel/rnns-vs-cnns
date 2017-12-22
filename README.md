@@ -4,6 +4,8 @@ This project takes as a background [CNNs for sentence classification by Yoon Kim
 2) Adds a new dataset to verify to what extend (some of the) conclusions stated in the papers generalize to a new domain
 3) Implements several additional recurrent and mixed architectures, and evaluates them on both new and paper's data
 
+**Project report:** [pdf link](report-final.pdf)
+
 ## Models
 General idea is the same:
 1) Encode a source sentence in some way (RNN / CNN) to get single a vector sentence representation
